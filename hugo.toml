@@ -34,13 +34,13 @@ pagination.pagerSize     = 10
     subtitle  = "デバイス開発日誌"
 
     [languages.ja.params.portrait]
-      path = "/img/ddd_logo_white.svg"
+      path = "/img/ddd_logo.svg"
       MaxWidth = "300px"
 
     [languages.ja.params.logo]
       logoText = "Deadline-Driven Developers"
       logoHomeLink = "/"
-      # path = "/img/ddd_logo_white.svg"
+      # path = "/img/ddd_logo.svg"
       # alt = "Deadline-Driven Developers"
 
 [[menu.main]]
