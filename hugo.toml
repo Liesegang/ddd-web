@@ -1,4 +1,4 @@
-theme = "hugo-theme-stack"
+theme = "hello-friend-ng"
 baseURL = "https://dddev.group"
 title = "Deadline-Driven Developers"
 languageCode = "ja"
