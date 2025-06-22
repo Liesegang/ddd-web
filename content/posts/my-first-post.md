@@ -1,10 +1,12 @@
-+++
-date = '2025-06-22T20:53:50+09:00'
-draft = true
-title = '紹介'
-+++
-
-# Deadline Driven Developers 〜期日ギリギリが原動力の電子工作チーム〜
+---
+date: '2025-06-22T20:53:50+09:00'
+draft: false
+title: '紹介'
+toc: false
+images:
+tags:
+  - お知らせ
+---
 
 ## 名前の由来
 

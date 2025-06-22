@@ -1,10 +1,49 @@
-theme = "ananke"
+theme = "hugo-theme-stack"
 baseURL = "https://dddev.group"
-title = "Deadline Driven Developers"
+title = "Deadline-Driven Developers"
 languageCode = "ja"
-enableGitInfo = true
+defaultContentLanguage = 'ja'
+pagination.pagerSize     = 10
+
 [params]
-  description = "Hugo + Netlify CMS ブログ"
+  description = "Deadline-Driven Developers 開発日誌"
+
+  homeSubtitle = "デバイス開発日誌"
+  disableReadOtherPosts = false
+  enableSharingButtons = true
+
+  keywords = "homepage, blog, electrics, software, development"
+  images = [""]
+
+[taxonomies]
+  category = "blog"
+  tag      = "tags"
+  series   = "series"
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[languages]
+  [languages.ja]
+    title = "Deadline-Driven Developers"
+    keywords = ""
+    readOtherPosts = "ほかの投稿を読む"
+
+  [languages.ja.params]
+    subtitle  = "デバイス開発日誌"
+
+    [languages.ja.params.portrait]
+      path = "/img/ddd_logo_white.svg"
+      MaxWidth = "300px"
+
+    [languages.ja.params.logo]
+      logoText = "Deadline-Driven Developers"
+      logoHomeLink = "/"
+      # path = "/img/ddd_logo_white.svg"
+      # alt = "Deadline-Driven Developers"
+
+[[menu.main]]
+  identifier = "blog"
+  name       = "Blog"
+  url        = "/posts"
