@@ -5,3 +5,6 @@ languageCode = "ja"
 enableGitInfo = true
 [params]
   description = "Hugo + Netlify CMS ブログ"
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
