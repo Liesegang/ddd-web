@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deadline Driven Developers</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Deadline Driven Developers</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 22 Jun 2025 20:53:50 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>紹介</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Sun, 22 Jun 2025 20:53:50 +0900</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;h1 id=&#34;deadline-driven-developers-期日ギリギリが原動力の電子工作チーム&#34;&gt;Deadline Driven Developers 〜期日ギリギリが原動力の電子工作チーム〜&lt;/h1&gt;&#xA;&lt;h2 id=&#34;名前の由来&#34;&gt;名前の由来&lt;/h2&gt;&#xA;&lt;p&gt;我々の名前が &lt;strong&gt;Deadline Driven Developers&lt;/strong&gt; なのは、締め切りギリギリにならないと作り始められないからです。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Deadline Driven&lt;/strong&gt;：デッドライン（締め切り）を動力源とし、&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Developers&lt;/strong&gt;：電子デバイス開発者の集団です。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;期日に追われる高揚感とオタク精神で、新しいアイデアを形にしていくことを理念としています。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;最近の制作物&#34;&gt;最近の制作物&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;ビール缶個数計測 IoT 冷蔵庫モジュール&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;重量センサーで冷蔵庫内のビール缶数をカウント&lt;/li&gt;&#xA;&lt;li&gt;オンラインで在庫情報を外出先から確認&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;8080 内部ビット可視化シミュレータ／学習ツール&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Intel 8080 プロセッサの内部動作（レジスタ／バス信号）をリアルタイム可視化&lt;/li&gt;&#xA;&lt;li&gt;CPU の動作原理の学習を視覚的にサポート&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Smart Knob 左手用コントローラ開発&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;「Smart Knob」を左手デバイスに応用&lt;/li&gt;&#xA;&lt;li&gt;ソフト制御できる“カリカリ感”で映像編集・音楽制作をアシスト&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;BLDC モーター駆動ロボット制作&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;BLDC ＋ FOC 制御で高精度トルク制御を実現&lt;/li&gt;&#xA;&lt;li&gt;軽量モジュラー設計で試作から量産まで対応可能&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;メンバー&#34;&gt;メンバー&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;xxxx&lt;/li&gt;&#xA;&lt;li&gt;Liesegang&lt;/li&gt;&#xA;&lt;li&gt;yyyy&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,7 @@
+theme = "ananke"
+baseURL = "https://dddev.group"
+title = "Deadline Driven Developers"
+languageCode = "ja"
+enableGitInfo = true
+[params]
+  description = "Hugo + Netlify CMS ブログ"
