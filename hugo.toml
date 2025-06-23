@@ -5,6 +5,9 @@ languageCode = "ja"
 defaultContentLanguage = 'ja'
 pagination.pagerSize     = 10
 
+[services.GoogleAnalytics]
+  id = "G-9ERHRQXKYH"
+
 [params]
   description = "Deadline-Driven Developers 開発日誌"
 
