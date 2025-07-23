@@ -12,22 +12,54 @@
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
 
-                <ul class="posts-list">
-                    {{ range .Pages }}
-                        <li class="post-item">
-                            <a href="{{.Permalink}}" class="post-item-inner">
-                                <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">
-                                    {{ if .Site.Params.dateformShort }}
-                                        {{ time.Format .Site.Params.dateformShort .Date }}
-                                    {{ else }}
-                                        {{ time.Format "Jan 2" .Date }}
-                                    {{ end }}
-                                </span>
-                            </a>
-                        </li>
-                    {{ end }}
-                </ul>
+                <div class="posts-group">
+                    <ul class="posts-list">
+                        {{ range .Pages }}
+                            <li class="post-item">
+                                {{ if .Params.thumbnailImage }}
+                                    <a href="{{.Permalink}}" class="post-item-inner post-item-with-thumbnail">
+                                        {{ $img := .Resources.GetMatch .Params.thumbnailImage }}
+                                        {{ if $img }}
+                                            {{ $resized := $img.Resize "800x q90" }}
+                                            <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="post-thumbnail">
+                                        {{ else }}
+                                            <img src="{{ .RelPermalink }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}" class="post-thumbnail">
+                                        {{ end }}
+                                        <div class="post-item-content">
+                                            <div class="post-item-text">
+                                                <span class="post-title">{{.Title}}</span>
+                                                <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                            </div>
+                                            <span class="post-day">
+                                                {{ if .Site.Params.dateformShort }}
+                                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                                {{ else }}
+                                                    {{ time.Format "Jan 2" .Date }}
+                                                {{ end }}
+                                            </span>
+                                        </div>
+                                    </a>
+                                {{ else }}
+                                    <a href="{{.Permalink}}" class="post-item-inner">
+                                        <div class="post-item-content">
+                                            <div class="post-item-text">
+                                                <span class="post-title">{{.Title}}</span>
+                                                <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                            </div>
+                                            <span class="post-day">
+                                                {{ if .Site.Params.dateformShort }}
+                                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                                {{ else }}
+                                                    {{ time.Format "Jan 2" .Date }}
+                                                {{ end }}
+                                            </span>
+                                        </div>
+                                    </a>
+                                {{ end }}
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
             </div>
         {{ end }}
     {{ partial "pagination-list.html" . }}

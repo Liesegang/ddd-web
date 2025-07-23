@@ -38,8 +38,17 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    width: 760px;
-    max-width: 100%;
+    width: 100%;
+    max-width: $content-width;
+    padding: 0 32px;
+
+    @media #{$media-size-tablet} {
+      padding: 0 20px;
+    }
+
+    @media #{$media-size-phone} {
+      padding: 0 16px;
+    }
   }
 }
 

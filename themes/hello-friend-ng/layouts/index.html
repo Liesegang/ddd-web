@@ -3,10 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-    <main>
-        <div>
+    <main style="width: 80vw; max-width: 1280px; margin: auto;">
+        <section style="margin-top: 100px;">
             {{ if .Site.Params.Portrait.Path }}
-            <img src="{{ .Site.Params.Portrait.Path }}" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}; margin: auto" />
+            <img src="{{ .Site.Params.Portrait.Path }}" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}; margin:auto;" />
             {{ end }}
             
             <h1>{{ .Site.Title }}</h1>
@@ -18,7 +18,7 @@
                     {{ partial "social-icons.html" . }}
                 </div>
             {{- end }}
-        </div>
+        </section>
 
         <section class="posts">
             <h2>作品</h2>
@@ -28,16 +28,46 @@
                 <ul class="posts-list">
                     {{ range $workPages }}
                         <li class="post-item">
-                            <a href="{{.Permalink}}" class="post-item-inner">
-                                <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">
-                                    {{ if .Site.Params.dateformShort }}
-                                        {{ time.Format .Site.Params.dateformShort .Date }}
+                            {{ if .Params.thumbnailImage }}
+                                <a href="{{.Permalink}}" class="post-item-inner post-item-with-thumbnail">
+                                    {{ $img := .Resources.GetMatch .Params.thumbnailImage }}
+                                    {{ if $img }}
+                                        {{ $resized := $img.Resize "800x q90" }}
+                                        <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="post-thumbnail">
                                     {{ else }}
-                                        {{ time.Format "Jan 2" .Date }}
+                                        <img src="{{ .RelPermalink }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}" class="post-thumbnail">
                                     {{ end }}
-                                </span>
-                            </a>
+                                    <div class="post-item-content">
+                                        <div class="post-item-text">
+                                            <span class="post-title">{{.Title}}</span>
+                                            <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                        </div>
+                                        <span class="post-day">
+                                            {{ if .Site.Params.dateformShort }}
+                                                {{ time.Format .Site.Params.dateformShort .Date }}
+                                            {{ else }}
+                                                {{ time.Format "Jan 2" .Date }}
+                                            {{ end }}
+                                        </span>
+                                    </div>
+                                </a>
+                            {{ else }}
+                                <a href="{{.Permalink}}" class="post-item-inner">
+                                    <div class="post-item-content">
+                                        <div class="post-item-text">
+                                            <span class="post-title">{{.Title}}</span>
+                                            <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                        </div>
+                                        <span class="post-day">
+                                            {{ if .Site.Params.dateformShort }}
+                                                {{ time.Format .Site.Params.dateformShort .Date }}
+                                            {{ else }}
+                                                {{ time.Format "Jan 2" .Date }}
+                                            {{ end }}
+                                        </span>
+                                    </div>
+                                </a>
+                            {{ end }}
                         </li>
                     {{ end }}
                 </ul>
@@ -53,14 +83,19 @@
                 {{ range $pages }}
                     <li class="post-item">
                         <a href="{{.Permalink}}" class="post-item-inner">
-                            <span class="post-title">{{.Title}}</span>
-                            <span class="post-day">
-                                {{ if .Site.Params.dateformShort }}
-                                    {{ time.Format .Site.Params.dateformShort .Date }}
-                                {{ else }}
-                                    {{ time.Format "Jan 2" .Date }}
-                                {{ end }}
-                            </span>
+                            <div class="post-item-content">
+                                <div class="post-item-text">
+                                    <span class="post-title">{{.Title}}</span>
+                                    <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                </div>
+                                <span class="post-day">
+                                    {{ if .Site.Params.dateformShort }}
+                                        {{ time.Format .Site.Params.dateformShort .Date }}
+                                    {{ else }}
+                                        {{ time.Format "Jan 2" .Date }}
+                                    {{ end }}
+                                </span>
+                            </div>
                         </a>
                     </li>
                 {{ end }}

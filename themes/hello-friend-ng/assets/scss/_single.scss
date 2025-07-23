@@ -1,11 +1,17 @@
 .post {
   width: 100%;
-  max-width: 800px;
+  max-width: $content-width;
   text-align: left;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 40px 32px;
+  margin: 0 auto;
+  
   @media #{$media-size-tablet} {
-    max-width: 600px;
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+
+  @media #{$media-size-phone} {
+    padding: 20px 16px;
   }
 
   &-date {
@@ -43,13 +49,21 @@
 
   &-cover {
     border-radius: 8px;
-    margin: 40px -50px;
-    width: $max-width;
-    max-width: $max-width;
+    margin: 40px -32px;
+    width: calc(100% + 64px);
+    max-width: calc(100% + 64px);
     overflow: hidden;
+    
     @media #{$media-size-tablet} {
-      margin: 20px 0;
-      width: 100%;
+      margin: 20px -20px;
+      width: calc(100% + 40px);
+      max-width: calc(100% + 40px);
+    }
+
+    @media #{$media-size-phone} {
+      margin: 20px -16px;
+      width: calc(100% + 32px);
+      max-width: calc(100% + 32px);
     }
   }
 

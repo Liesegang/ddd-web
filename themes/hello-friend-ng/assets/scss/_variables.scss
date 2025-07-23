@@ -20,14 +20,17 @@ $dark-color-secondary: #b3b3bd;
 $dark-border-color: #4e4e57;
 $dark-table-color: #4e4e57;
 
-$media-size-phone: "(max-width: 684px)";
-$media-size-tablet: "(max-width: 900px)";
+$media-size-phone: "(max-width: 768px)";
+$media-size-tablet: "(max-width: 1024px)";
+$media-size-desktop: "(min-width: 1025px)";
 
 /* Variables for js, must be the same as these in @custom-media queries */
 :root {
-  --phoneWidth: (max-width: 684px);
-  --tabletWidth: (max-width: 900px);
+  --phoneWidth: (max-width: 768px);
+  --tabletWidth: (max-width: 1024px);
+  --desktopWidth: (min-width: 1025px);
 }
 
 /* Content */
-$max-width: 860px;
+$max-width: 1400px;
+$content-width: 1200px;
