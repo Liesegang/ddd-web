@@ -6,9 +6,9 @@
     <main>
         <div>
             {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}; margin: auto" />
+            <img src="{{ .Site.Params.Portrait.Path }}" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}; margin: auto" />
             {{ end }}
-
+            
             <h1>{{ .Site.Title }}</h1>
 
             {{ partial "subtitle.html" . }}
@@ -19,5 +19,52 @@
                 </div>
             {{- end }}
         </div>
+
+        <section class="posts">
+            <h2>作品</h2>
+
+            {{ $workPages := where .Site.RegularPages "Type" "in" .Site.Params.subSections }}
+            <div class="posts-group">
+                <ul class="posts-list">
+                    {{ range $workPages }}
+                        <li class="post-item">
+                            <a href="{{.Permalink}}" class="post-item-inner">
+                                <span class="post-title">{{.Title}}</span>
+                                <span class="post-day">
+                                    {{ if .Site.Params.dateformShort }}
+                                        {{ time.Format .Site.Params.dateformShort .Date }}
+                                    {{ else }}
+                                        {{ time.Format "Jan 2" .Date }}
+                                    {{ end }}
+                                </span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+
+        <section class="posts">
+            <h2>最近の記事</h2>
+
+            {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+
+            <ul class="posts-list">
+                {{ range $pages }}
+                    <li class="post-item">
+                        <a href="{{.Permalink}}" class="post-item-inner">
+                            <span class="post-title">{{.Title}}</span>
+                            <span class="post-day">
+                                {{ if .Site.Params.dateformShort }}
+                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                {{ else }}
+                                    {{ time.Format "Jan 2" .Date }}
+                                {{ end }}
+                            </span>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </section>
     </main>
 {{ end }}
