@@ -42,6 +42,6 @@ tags:
 
 ## メンバー
 
-- hagio
+- ogim
 - liesegang
 - yamaoka
