@@ -4,6 +4,7 @@ draft: false
 title: "紹介"
 toc: false
 images:
+thumbnailImage: "ddd_logo.png"
 tags:
   - お知らせ
 ---

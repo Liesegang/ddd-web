@@ -4,6 +4,7 @@ date: 2025-09-05T12:57:34+09:00
 draft: false
 toc: false
 images:
+thumbnailImage: "map.png"
 tags:
   - NT
   - NT Tokyo

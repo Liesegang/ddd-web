@@ -4,9 +4,12 @@ date: 2025-09-05T13:06:13+09:00
 draft: false
 toc: false
 images:
+thumbnailImage: "x_thumb.png"
 tags:
   - お知らせ
 ---
+
+{{< img800x src="x_thumb.png" alt="サムネイル" width="600" >}}
 
 このたび、**DDD の公式 X（旧 Twitter）アカウント**を開設しました。制作ログ、イベント出展時の現地レポートを発信していきます。
 
