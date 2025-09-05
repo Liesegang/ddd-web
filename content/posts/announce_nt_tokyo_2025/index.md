@@ -5,7 +5,10 @@ draft: false
 toc: false
 images:
 tags:
-  - NT Tokyo, お知らせ, イベント
+  - NT
+  - NT Tokyo
+  - お知らせ
+  - イベント
 ---
 
 直前のご案内になりますが、**NT 東京 2025**に出展します。お時間が合う方はぜひお立ち寄りください！
@@ -16,6 +19,10 @@ tags:
 - **ブース**：E4「**DDD**」
 - **ステージ発表**：9 月 6 日（土）**14:00–14:30**
   ※全体のスケジュールは **[タイムテーブル](https://nt-tokyo.org/timetable)** をご覧ください。
+
+{{< img800x src="map.png" alt="会場マップとDDDブースの場所を示すマーク" >}}
+
+引用: NT東京 Xアカウント, https://x.com/NT_tokyo_info/status/1963211752562434247
 
 ## 展示内容
 

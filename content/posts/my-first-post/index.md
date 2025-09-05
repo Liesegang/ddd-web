@@ -8,6 +8,8 @@ tags:
   - お知らせ
 ---
 
+{{< img800x src="ddd_logo.svg" alt="DDDロゴ" width="600" >}}
+
 ## 名前の由来
 
 我々の名前が **Deadline Driven Developers** なのは、締め切りギリギリにならないと作り始められないからです。

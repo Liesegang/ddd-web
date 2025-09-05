@@ -1,5 +1,5 @@
 ---
-title: "X_account"
+title: "X（旧Twitter）公式アカウント開設のお知らせ"
 date: 2025-09-05T13:06:13+09:00
 draft: false
 toc: false

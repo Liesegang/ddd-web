@@ -1,8 +1,34 @@
-{{ $src := .Get "src" }}
-{{ $original := .Page.Resources.GetMatch $src }}
-{{ if $original }}
-	{{ $resized := $original.Resize "800x q90" }}
-	<a href="{{ $original.RelPermalink }}">
-	<img src="{{ $resized.RelPermalink }}" alt="{{ .Get "alt" }}">
-	</a>
-{{ end }}
+{{- $src   := .Get "src" -}}
+{{- $alt   := .Get "alt" | default "" -}}
+{{- $warg  := .Get "width" -}}            {{/* "800" / "480" / "100%" など。未指定可 */}}
+{{- $qstr  := .Get "q" | default "90" -}} {{/* 文字列で来ることがあるので一旦文字列 */}}
+{{- $q     := $qstr | int -}}
+
+{{- /* ページリソース優先。なければ assets/ を探す */ -}}
+{{- $res := .Page.Resources.GetMatch $src | default (resources.Get $src) -}}
+{{- if not $res -}}
+  {{ errorf "img800x: %q not found as Page Resource nor in assets/" $src }}
+{{- else -}}
+  {{- $isSVG := eq $res.MediaType.SubType "svg" -}}
+
+  {{- $isNumeric := and (ne $warg "") (gt (len (findRE `^\d+$` (printf "%v" $warg))) 0) -}}
+
+  {{- $numW := 800 -}}
+  {{- if $isNumeric -}}
+    {{- $numW = ($warg | int) -}}
+  {{- end -}}
+
+  {{- $img := $res -}}
+  {{- if not $isSVG -}}
+    {{- $img = $res.Resize (printf "%dx q%d" $numW $q) -}}
+  {{- end -}}
+
+  <a href="{{ $res.RelPermalink }}">
+    <img src="{{ $img.RelPermalink }}"
+         alt="{{ $alt }}"
+         loading="lazy" decoding="async"
+         {{- if $isNumeric -}} width="{{ $numW }}" {{- else -}}
+           {{- with $warg }} width="{{ . }}" {{ end -}}
+         {{- end -}}>
+  </a>
+{{- end -}}
