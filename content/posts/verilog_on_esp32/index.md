@@ -4,11 +4,12 @@ date: 2025-09-09T18:27:41+09:00
 draft: false
 toc: true
 images:
+thumbnailImage: thumbnail.png
 tags:
   - verilog
   - ESP32
   - yosys
-  - 8080 Emulator
+  - 8080 Simulator
 ---
 
 ## 背景
@@ -16,6 +17,8 @@ tags:
 現在、8080 simulatorプロジェクトにて、Intel 8080 CPUの回路をVerilogで記述し、それをESP32上で実行して内部状態を可視化するシステムを開発しています。このプロジェクトでは、本来FPGAやASICで動作するはずのハードウェア回路を、マイクロコントローラー上でソフトウェアとして実行することで、CPUの動作を詳細に観察・デバッグできる環境を構築しています。
 
 8080 simulatorの開発過程で、VerilogコードをESP32で動作させる手法について調査・実装を行ったため、その知見をまとめておきます。
+
+{{< img800x src="thumbnail.png" alt="記事サムネイル" >}}
 
 ## 概要
 

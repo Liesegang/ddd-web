@@ -8,9 +8,9 @@ tags:
   - 8080
   - Education
   - Hardware
-  - 8080 Emulator
+  - 8080 Simulator
 relatedTags:
-  - 8080 Emulator
+  - 8080 Simulator
 thumbnailImage: "DSC07110.JPG"
 comments: false
 showMeta: true

@@ -10,7 +10,7 @@ tags:
   - NT Tokyo
   - お知らせ
   - イベント
-  - 8080 Emulator
+  - 8080 Simulator
   - Smart Knob
 ---
 
