@@ -66,14 +66,6 @@ EOF
 yosys -s build/synthesize.ys
 ```
 
-### 方法2: ワンライナーでの実行
-
-より簡単に、以下のワンライナーでも実行できます：
-
-```bash
-yosys -p "read_verilog Counter8.v; hierarchy -top Counter8; proc; opt; write_cxxrtl -header -namespace counter8 -O6 -g4 Counter8.h"
-```
-
 ### Yosysコマンドの説明
 
 - `read_verilog Counter8.v`: Verilogファイルを読み込み
