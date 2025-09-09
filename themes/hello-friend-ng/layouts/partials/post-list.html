@@ -1,0 +1,82 @@
+{{/*
+  記事リスト表示用の共通パーシャル
+  引数:
+  - .pages: 表示する記事のページリスト
+  - .currentTags: 現在のページのタグ（関連記事表示時のハイライト用、オプション）
+  - .showTags: タグを表示するかどうか（デフォルト: false）
+*/}}
+
+{{ $pages := .pages }}
+{{ $currentTags := .currentTags }}
+{{ $showTags := .showTags | default false }}
+
+{{ if $pages }}
+    <ul class="posts-list">
+        {{ range $pages }}
+            <li class="post-item">
+                {{ if .Params.thumbnailImage }}
+                    <a href="{{.Permalink}}" class="post-item-inner post-item-with-thumbnail">
+                        {{ $img := .Resources.GetMatch .Params.thumbnailImage }}
+                        {{ if $img }}
+                            {{ $resized := $img.Resize "800x q90" }}
+                            <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="post-thumbnail">
+                        {{ else }}
+                            <img src="{{ .RelPermalink }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}" class="post-thumbnail">
+                        {{ end }}
+                        <div class="post-item-content">
+                            <div class="post-item-text">
+                                <span class="post-title">{{.Title}}</span>
+                                <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                {{ if and $showTags .Params.tags }}
+                                    <div class="related-post-tags">
+                                        {{ range .Params.tags }}
+                                            {{ if and $currentTags (in $currentTags .) }}
+                                                <span class="related-tag-match">{{ . }}</span>
+                                            {{ else }}
+                                                <span class="related-tag">{{ . }}</span>
+                                            {{ end }}
+                                        {{ end }}
+                                    </div>
+                                {{ end }}
+                            </div>
+                            <span class="post-day">
+                                {{ if .Site.Params.dateformShort }}
+                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                {{ else }}
+                                    {{ time.Format "Jan 2" .Date }}
+                                {{ end }}
+                            </span>
+                        </div>
+                    </a>
+                {{ else }}
+                    <a href="{{.Permalink}}" class="post-item-inner">
+                        <div class="post-item-content">
+                            <div class="post-item-text">
+                                <span class="post-title">{{.Title}}</span>
+                                <p class="post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+                                {{ if and $showTags .Params.tags }}
+                                    <div class="related-post-tags">
+                                        {{ range .Params.tags }}
+                                            {{ if and $currentTags (in $currentTags .) }}
+                                                <span class="related-tag-match">{{ . }}</span>
+                                            {{ else }}
+                                                <span class="related-tag">{{ . }}</span>
+                                            {{ end }}
+                                        {{ end }}
+                                    </div>
+                                {{ end }}
+                            </div>
+                            <span class="post-day">
+                                {{ if .Site.Params.dateformShort }}
+                                    {{ time.Format .Site.Params.dateformShort .Date }}
+                                {{ else }}
+                                    {{ time.Format "Jan 2" .Date }}
+                                {{ end }}
+                            </span>
+                        </div>
+                    </a>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

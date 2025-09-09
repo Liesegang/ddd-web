@@ -1,0 +1,45 @@
+{{ $currentPage := . }}
+{{ $currentTags := .Params.tags }}
+{{ $relatedTags := .Params.relatedTags | default $currentTags }}
+
+{{ if $relatedTags }}
+    <!-- relatedTagsまたはtagsに基づいて関連する投稿を取得 -->
+    {{ $relatedPosts := slice }}
+    {{ range $relatedTags }}
+        {{ $tag := . }}
+        {{ range where $.Site.RegularPages "Type" "posts" }}
+            {{ if in .Params.tags $tag }}
+                {{ if ne .Permalink $currentPage.Permalink }}
+                    {{ $relatedPosts = $relatedPosts | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    <!-- 重複を削除し、日付順でソート -->
+    {{ $uniquePosts := slice }}
+    {{ range $relatedPosts }}
+        {{ $found := false }}
+        {{ range $uniquePosts }}
+            {{ if eq .Permalink $.Permalink }}
+                {{ $found = true }}
+            {{ end }}
+        {{ end }}
+        {{ if not $found }}
+            {{ $uniquePosts = $uniquePosts | append . }}
+        {{ end }}
+    {{ end }}
+    
+    {{ $sortedPosts := sort $uniquePosts "Date" "desc" }}
+    {{ $limitedPosts := first 5 $sortedPosts }}
+
+    {{ if $limitedPosts }}
+        <hr />
+        <section class="posts">
+            <h2>関連記事</h2>
+            <div class="posts-group">
+                {{ partial "post-list.html" (dict "pages" $limitedPosts "currentTags" $relatedTags "showTags" true) }}
+            </div>
+        </section>
+    {{ end }}
+{{ end }}

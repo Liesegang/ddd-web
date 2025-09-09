@@ -8,6 +8,8 @@ tags:
   - WeightSensor
   - NT東京2024
   - ESP32
+relatedTags:
+  - Fridge Counter
 thumbnailImage: "DSC04979.JPG"
 comments: false
 showMeta: true

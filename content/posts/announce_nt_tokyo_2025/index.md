@@ -10,6 +10,9 @@ tags:
   - NT Tokyo
   - お知らせ
   - イベント
+  - 8080 Emulator
+  - Fridge Counter
+  - Smart Knob
 ---
 
 直前のご案内になりますが、**NT 東京 2025**に出展します。お時間が合う方はぜひお立ち寄りください！

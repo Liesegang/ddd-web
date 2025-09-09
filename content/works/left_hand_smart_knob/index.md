@@ -6,9 +6,11 @@ categories:
 tags:
   - InputDevice
   - Haptics
-  - SmartKnob
+  - Smart Knob
   - BLDC
   - STM32
+relatedTags:
+  - Smart Knob
 thumbnailImage: "S__42524715.jpg"
 comments: false
 showMeta: true
