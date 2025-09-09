@@ -11,7 +11,6 @@ tags:
   - お知らせ
   - イベント
   - 8080 Emulator
-  - Fridge Counter
   - Smart Knob
 ---
 
