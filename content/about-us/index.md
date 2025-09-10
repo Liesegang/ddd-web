@@ -45,6 +45,32 @@ tags:
 
 ## メンバー
 
-- ogim
-- liesegang
-- yamaoka
+### ogim
+
+TBD
+
+### liesegang
+
+**技術開発**: JavaScript, Python, Ruby, C++ など幅広い言語を扱うフルスタック開発者。
+
+**セキュリティ分野**: CTF や SECCON での活動経験があり、情報セキュリティ分野にも精通。
+
+**現在の活動**: DDD では主にハードウェアとソフトウェアの融合プロジェクトを担当。
+
+**Links**:
+
+- Twitter: [@utakata_fc](https://x.com/utakata_fc)
+- GitHub: [Liesegang](https://github.com/Liesegang)
+
+### yamaoka
+
+**経歴**: 1975 年 3 月、大学卒業論文として「i8080 を使ったフーリエ変換機の製作」で PC を開発。原始アセンブラーから FFT まで実装。1977 年ヤマハ入社、半導体部門に所属。
+
+**主な開発実績**:
+
+- FM 音源の初期開発チームに参加
+- 楽器用音源 LSI 各種開発
+- 各種 CPU アーキテクチャーの調査
+- MSX2 用グラフィックプロセッサー V9938 開発
+- セガ社ゲーム用 LSI 開発
+  - 1 チップ・メガドライブ開発
