@@ -49,9 +49,9 @@ endmodule
 
 ## YosysでC++に変換
 
-VerilogコードをC++に変換するため、YosysのCXXRTL機能を使用します。
+VerilogコードをC++に変換するため、YosysのCXXRTLを使用します。
 
-まず、Yosysスクリプトファイルを生成します：
+まず、Yosysスクリプトファイルを生成し、実行します。
 
 ```bash
 # ディレクトリ作成
@@ -62,7 +62,7 @@ cat > build/synthesize.ys << 'EOF'
 read_verilog Counter8.v
 hierarchy -top Counter8
 proc; opt
-write_cxxrtl -header -namespace counter8 -O6 -g4 Counter8.h
+write_cxxrtl -header -O6 -g4 Counter8.h
 EOF
 
 # Yosysでスクリプトを実行
@@ -76,7 +76,6 @@ yosys -s build/synthesize.ys
 - `proc; opt`: プロセス展開と最適化
 - `write_cxxrtl`: CXXRTL形式でC++ヘッダーファイルを生成
   - `-header`: ヘッダーファイルとして出力
-  - `-namespace counter8`: 名前空間を指定
   - `-O6`: 最適化レベル6
   - `-g4`: デバッグ情報レベル4
 
@@ -94,7 +93,7 @@ yosys -s build/synthesize.ys
 
 ### プロジェクト構成
 
-以下のようなディレクトリ構成でESP32プロジェクトを作成します：
+以下のようなディレクトリ構成でESP32プロジェクトを作成します。ここではPlatform IOを使用しています。
 
 ```
 project_root/
@@ -117,7 +116,7 @@ project_root/
 
 ### ヘッダーファイルの取り込み
 
-ArduinoとCXXRTLのマクロが競合するため、適切な順序でインクルードする必要があります。
+ArduinoとCXXRTLのマクロが競合するため、少しincludeを調整します。
 
 ```cpp
 // CXXRTL (Yosys) の必要なヘッダーファイルを先に読み込む
@@ -184,7 +183,7 @@ ESP32の初期化とVerilogモジュールの初期化を行います。
 ```cpp
 void setup() {
   Serial.begin(115200);
-  Serial.println("Counter8 Test Program (CXXRTL)");
+  Serial.println("Counter8 Test");
   Serial.println("==============================");
 
   // ボタンピンの初期化
