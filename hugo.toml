@@ -52,8 +52,8 @@ pagination.pagerSize     = 10
 [menu]
   [[menu.main]]
     identifier = "menu1"
-    name       = "Blog"
-    url        = "/posts"
+    name       = "About Us"
+    url        = "/about-us"
 
   [[menu.main]]
     identifier = "menu2"
@@ -62,5 +62,10 @@ pagination.pagerSize     = 10
 
   [[menu.main]]
     identifier = "menu3"
+    name       = "Blog"
+    url        = "/posts"
+
+  [[menu.main]]
+    identifier = "menu4"
     name       = "Contact"
     url        = "/contact"
