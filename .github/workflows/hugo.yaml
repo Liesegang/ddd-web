@@ -34,7 +34,7 @@ jobs:
     env:
       HUGO_VERSION: 0.147.8
       HUGO_ENVIRONMENT: production
-      TZ: America/Los_Angeles
+      TZ: Asia/Tokyo
     steps:
       - name: Install Hugo CLI
         run: |
@@ -68,7 +68,7 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
+            --environment production
       - name: Cache Save
         id: cache-save
         uses: actions/cache/save@v4
