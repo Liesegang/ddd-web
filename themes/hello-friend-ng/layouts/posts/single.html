@@ -120,9 +120,13 @@
       </div>
     {{- end }}
 
-    {{ partial "pagination-single.html" . }}
+    <hr />
 
     {{ partial "comments.html" . }}
+
+    <hr />
+
+    {{ partial "pagination-single.html" . }}
 
     {{ if .Site.Config.Services.Disqus.Shortname }}
       {{ if not (eq .Params.Comments "false") }}

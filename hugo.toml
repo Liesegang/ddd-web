@@ -13,7 +13,6 @@ pagination.pagerSize     = 10
 
   homeSubtitle = "デバイス開発日誌"
   disableReadOtherPosts = false
-  enableSharingButtons = true
 
   keywords = "homepage, blog, electrics, software, development"
   images = [""]
