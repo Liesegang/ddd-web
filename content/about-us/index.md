@@ -100,7 +100,7 @@ tags:
    </div>
    
    <div class="member-avatar">
-      <img src="ogim.png" alt="ogimプロフィール画像" loading="lazy" width="240" height="240">
+      {{< img800x src="ogim.png" alt="ogimプロフィール画像" width="240" center="false" >}}
    </div>
    
    <div class="member-details">
@@ -125,7 +125,7 @@ tags:
    </div>
    
    <div class="member-avatar">
-      <img src="liesegang.png" alt="liesegangプロフィール画像" loading="lazy" width="240" height="240">
+      {{< img800x src="liesegang.png" alt="liesegangプロフィール画像" width="240" center="false" >}}
    </div>
    
    <div class="member-details">
@@ -135,7 +135,8 @@ tags:
       </div>
       <div class="member-detail-item">
          <div class="member-detail-label">経歴</div>
-         <div class="member-detail-content">本職は、大手のサーバーエンジニア。</div>
+         <div class="member-detail-content">大学ではBMIやCPUアーキテクチャを研究。またサークルでNHKロボコンに参加し優勝。</div>
+         <div class="member-detail-content">本職はサーバーサイドエンジニア。</div>
       </div>
       <div class="member-detail-item">
          <div class="member-detail-label">技術分野</div>
@@ -158,7 +159,7 @@ tags:
    </div>
    
    <div class="member-avatar">
-      <img src="yamaoka.png" alt="yamaokaプロフィール画像" loading="lazy" width="240" height="240">
+      {{< img800x src="yamaoka.png" alt="yamaokaプロフィール画像" width="240" center="false" >}}
    </div>
    
    <div class="member-details">

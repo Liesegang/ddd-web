@@ -3,7 +3,8 @@
 {{- $warg  := .Get "width" -}}            {{/* "800" / "480" / "100%" など。未指定可 */}}
 {{- $qstr  := .Get "q" | default "90" -}} {{/* 文字列で来ることがあるので一旦文字列 */}}
 {{- $q     := $qstr | int -}}
-{{- $center := .Get "center" | default "true" -}}          {{/* "true" で中央揃え */}}
+{{- $centerStr := .Get "center" | default "true" -}}
+{{- $center := eq $centerStr "true" -}}          {{/* "true" で中央揃え */}}
 {{- $class := .Get "class" -}}            {{/* 追加のCSSクラス */}}
 
 {{- /* ページリソース優先。なければ assets/ を探す */ -}}
