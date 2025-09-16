@@ -5,6 +5,12 @@ languageCode = "ja"
 defaultContentLanguage = 'ja'
 pagination.pagerSize     = 10
 
+# Markdown設定
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [services.GoogleAnalytics]
   id = "G-9ERHRQXKYH"
 
@@ -19,6 +25,8 @@ pagination.pagerSize     = 10
 
   mainSections = ["posts"]
   subSections = ["works"]
+  
+  customCSS = ["/css/custom.css"]
 
 [taxonomies]
   category = "blog"

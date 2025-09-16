@@ -3,6 +3,8 @@
 {{- $warg  := .Get "width" -}}            {{/* "800" / "480" / "100%" など。未指定可 */}}
 {{- $qstr  := .Get "q" | default "90" -}} {{/* 文字列で来ることがあるので一旦文字列 */}}
 {{- $q     := $qstr | int -}}
+{{- $center := .Get "center" | default "true" -}}          {{/* "true" で中央揃え */}}
+{{- $class := .Get "class" -}}            {{/* 追加のCSSクラス */}}
 
 {{- /* ページリソース優先。なければ assets/ を探す */ -}}
 {{- $res := .Page.Resources.GetMatch $src | default (resources.Get $src) -}}
@@ -23,12 +25,19 @@
     {{- $img = $res.Resize (printf "%dx q%d" $numW $q) -}}
   {{- end -}}
 
-  <a href="{{ $res.RelPermalink }}">
-    <img src="{{ $img.RelPermalink }}"
-         alt="{{ $alt }}"
-         loading="lazy" decoding="async"
-         {{- if $isNumeric -}} width="{{ $numW }}" {{- else -}}
-           {{- with $warg }} width="{{ . }}" {{ end -}}
-         {{- end -}}>
-  </a>
+  {{- if $center -}}
+  <div class="img-center-wrapper">
+  {{- end -}}
+    <a href="{{ $res.RelPermalink }}">
+      <img src="{{ $img.RelPermalink }}"
+           alt="{{ $alt }}"
+           loading="lazy" decoding="async"
+           {{- if $center }} class="img-center{{ if $class }} {{ $class }}{{ end }}"{{ else }}{{ with $class }} class="{{ . }}"{{ end }}{{ end -}}
+           {{- if $isNumeric -}} width="{{ $numW }}" {{- else -}}
+             {{- with $warg }} width="{{ . }}" {{ end -}}
+           {{- end -}}>
+    </a>
+  {{- if $center -}}
+  </div>
+  {{- end -}}
 {{- end -}}

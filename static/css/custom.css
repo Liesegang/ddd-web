@@ -25,3 +25,489 @@
     text-decoration: none;
     font-weight: 500;
 }
+
+/* 画像中央揃え用スタイル */
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.img-center-wrapper {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* About-usページ - フラットデザイン */
+.about-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    line-height: 1.7;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    margin-bottom: 4rem;
+}
+
+.hero-logo {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+}
+
+.section-card {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #333;
+    letter-spacing: 0.02em;
+}
+
+.origin-explanation {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 2rem 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-style: normal;
+}
+
+.definition-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.definition-item {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: none;
+}
+
+.definition-term {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    position: static;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.project-card-link:hover .project-card {
+    border-color: #007acc;
+    box-shadow: 0 4px 12px rgba(0, 122, 204, 0.15);
+    transform: translateY(-2px);
+}
+
+.project-card::before {
+    display: none;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-features li {
+    padding: 0.3rem 0;
+    color: #666;
+    line-height: 1.6;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.project-features li::before {
+    content: '•';
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .about-page {
+        color: #e0e0e0;
+    }
+    
+    .section-title {
+        color: #ffffff;
+    }
+    
+    .origin-explanation {
+        color: #b0b0b0;
+    }
+    
+    .definition-item {
+        background: #2a2a2a;
+        border-color: #444;
+    }
+    
+    .definition-term {
+        color: #ffffff;
+    }
+    
+    .project-card {
+        background: #2a2a2a;
+        border-color: #444;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .project-card-link:hover .project-card {
+        border-color: #4da6ff;
+        box-shadow: 0 4px 12px rgba(77, 166, 255, 0.2);
+    }
+    
+    .project-title {
+        color: #ffffff;
+    }
+    
+    .project-features li {
+        color: #b0b0b0;
+    }
+    
+    .project-features li::before {
+        color: #666;
+    }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 900px) and (min-width: 769px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding: 0 1rem;
+    }
+    
+    .hero-section {
+        padding: 3rem 0 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-logo {
+        max-width: 280px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .definition-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .definition-item,
+    .project-card {
+        padding: 1rem;
+    }
+}
+
+.member-card,
+.content .member-card,
+article .member-card,
+main .member-card {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 4px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    transition: none !important;
+    display: block !important;
+    position: static !important;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .member-card,
+    .content .member-card,
+    article .member-card,
+    main .member-card {
+        background: #1a1a1a !important;
+    }
+}
+
+.member-avatar {
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.member-avatar img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.member-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.member-name,
+.content .member-name,
+article .member-name,
+main .member-name {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin: 0 0 1.5rem 0 !important;
+    display: block !important;
+}
+
+.member-name::before,
+.content .member-name::before,
+article .member-name::before,
+main .member-name::before {
+    display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .member-card,
+    .content .member-card,
+    article .member-card,
+    main .member-card {
+        background: #2a2a2a !important;
+        border-color: #444 !important;
+    }
+    
+    .member-name,
+    .content .member-name,
+    article .member-name,
+    main .member-name {
+        color: #ffffff !important;
+    }
+    
+    .member-detail-label {
+        color: #b0b0b0 !important;
+    }
+    
+    .member-detail-content {
+        color: #b0b0b0 !important;
+    }
+    
+    .member-links {
+        border-top-color: #444 !important;
+    }
+    
+    .member-links strong {
+        color: #b0b0b0 !important;
+    }
+    
+    .member-links a {
+        color: #ffffff !important;
+    }
+    
+    .member-links a:hover {
+        color: #b0b0b0 !important;
+    }
+    
+    .member-achievements strong {
+        color: #b0b0b0 !important;
+    }
+    
+    .member-achievements li {
+        color: #b0b0b0 !important;
+    }
+}
+
+.member-details {
+    display: grid;
+    gap: 1rem;
+}
+
+.member-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.member-detail-label {
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.member-detail-content {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.member-links {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.member-links strong {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.member-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.member-links li {
+    margin: 0;
+}
+
+.member-links a {
+    color: #333;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    transition: none;
+}
+
+.member-links a:hover {
+    color: #666;
+}
+
+.member-achievements {
+    margin-top: 1.5rem;
+}
+
+.member-achievements strong {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.member-achievements ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1rem;
+}
+
+.member-achievements li {
+    margin-bottom: 0.3rem;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .member-card {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .member-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .member-avatar img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member-name {
+        font-size: 1.3rem;
+        justify-content: center;
+    }
+    
+    .member-links ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-card {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .member-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .member-name {
+        font-size: 1.2rem;
+    }
+    
+    .member-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

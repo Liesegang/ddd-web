@@ -15,4 +15,4 @@ comments: false
 
 ## 📧 メール
 
-準備中
+**[ddd-group@googlegroups.com](mailto:ddd-group@googlegroups.com)**
