@@ -15,13 +15,14 @@
         {{ range $pages }}
             <li class="post-item">
                 <a href="{{.Permalink}}" class="post-item-inner post-item-with-thumbnail">
-                    {{ if .Params.thumbnailImage }}
-                        {{ $img := .Resources.GetMatch .Params.thumbnailImage }}
+                    {{ if .Params.images }}
+                        {{ $thumbnailImage := index .Params.images 0 }}
+                        {{ $img := .Resources.GetMatch $thumbnailImage }}
                         {{ if $img }}
                             {{ $resized := $img.Resize "800x q90" }}
                             <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="post-thumbnail">
                         {{ else }}
-                            <img src="{{ .RelPermalink }}{{ .Params.thumbnailImage }}" alt="{{ .Title }}" class="post-thumbnail">
+                            <img src="{{ .RelPermalink }}{{ $thumbnailImage }}" alt="{{ .Title }}" class="post-thumbnail">
                         {{ end }}
                     {{ else }}
                         <img src="/img/ddd_default_thumbnail_v2_1920x1080.png" alt="{{ .Title }}" class="post-thumbnail">

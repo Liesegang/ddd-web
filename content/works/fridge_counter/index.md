@@ -10,7 +10,7 @@ tags:
   - ESP32
 relatedTags:
   - Fridge Counter
-thumbnailImage: "DSC04979.JPG"
+images: ["DSC04979.JPG"]
 comments: false
 showMeta: true
 showActions: false

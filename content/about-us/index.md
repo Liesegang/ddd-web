@@ -3,8 +3,7 @@ date: "2025-06-22T20:53:50+09:00"
 draft: false
 title: "紹介"
 toc: false
-images:
-thumbnailImage: "ddd_logo.png"
+images: ["ddd_logo.png"]
 tags:
   - お知らせ
 ---

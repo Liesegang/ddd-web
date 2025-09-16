@@ -15,7 +15,7 @@ tags:
   - yosys
 relatedTags:
   - 8080 Simulator
-thumbnailImage: "DSC07110.JPG"
+images: ["DSC07110.JPG"]
 comments: false
 showMeta: true
 showActions: false

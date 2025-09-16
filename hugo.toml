@@ -21,7 +21,7 @@ pagination.pagerSize     = 10
   disableReadOtherPosts = false
 
   keywords = "homepage, blog, electrics, software, development"
-  images = [""]
+  images = ["/img/ddd_default_thumbnail_v2_1920x1080.png"]
 
   mainSections = ["posts"]
   subSections = ["works"]

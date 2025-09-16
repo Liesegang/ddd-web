@@ -3,8 +3,7 @@ title: "NT東京 2025参加レポート - 8080 Simulator & Smart Knob LHD展示�
 date: 2025-09-10T01:44:34+09:00
 draft: false
 toc: true
-images:
-thumbnailImage: DSC07205.JPG
+images: ["DSC07205.JPG"]
 tags:
   - NT
   - NT Tokyo

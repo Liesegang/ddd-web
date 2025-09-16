@@ -3,8 +3,7 @@ title: "VerilogをC++に変換してESP32で動かす"
 date: 2025-09-09T18:27:41+09:00
 draft: false
 toc: true
-images:
-thumbnailImage: thumbnail.png
+images: ["thumbnail.png"]
 tags:
   - verilog
   - ESP32

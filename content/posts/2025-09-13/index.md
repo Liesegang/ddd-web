@@ -3,8 +3,7 @@ title: "初めての半導体設計・製造体験！ISHI会インバータ回�
 date: 2025-09-14T00:00:00+09:00
 draft: false
 toc: true
-images:
-thumbnailImage: "klayout.png"
+images: ["klayout.png"]
 tags:
   - 半導体
   - IC設計

@@ -11,7 +11,7 @@ tags:
   - STM32
 relatedTags:
   - Smart Knob
-thumbnailImage: "S__42524715.jpg"
+images: ["S__42524715.jpg"]
 comments: false
 showMeta: true
 showActions: false
