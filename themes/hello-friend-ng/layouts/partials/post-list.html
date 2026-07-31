@@ -18,6 +18,9 @@
                     {{ if .Params.images }}
                         {{ $thumbnailImage := index .Params.images 0 }}
                         {{ $img := .Resources.GetMatch $thumbnailImage }}
+                        {{ if not $img }}
+                            {{ $img = resources.Get $thumbnailImage }}
+                        {{ end }}
                         {{ if $img }}
                             {{ $resized := $img.Resize "800x q90" }}
                             <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="post-thumbnail">
