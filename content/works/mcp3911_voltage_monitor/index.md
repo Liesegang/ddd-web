@@ -46,8 +46,6 @@ Webダッシュボードはインストール不要で、デスクトップ版�
 Android版Chrome向けのWebUSB接続も実装していますが、現時点では実機での動作を検証できていません。
 iPhoneとiPadには対応していません。
 
-[Webダッシュボードを開く](https://liesegang.github.io/mcp3911-voltage-monitor/)
-
 ## 2基の独立ADCによる2チャンネル同時変換
 
 MCP3911は2基のADCを内蔵し、Channel 0とChannel 1を同じタイミングで変換します。
@@ -65,6 +63,8 @@ IoTデバイスの消費電力を測る場合は、一方で負荷電圧、も�
 ## インストール不要の解析用Webダッシュボード
 
 {{< img800x src="mcp3911/dashboard.png" alt="2チャンネルの波形と演算結果を表示したWebダッシュボード" >}}
+
+[Webダッシュボードを開く](https://liesegang.github.io/mcp3911-voltage-monitor/)
 
 Webダッシュボードには、次の機能があります。
 
