@@ -1,0 +1,19 @@
+{{ $allPages := .pages.ByDate.Reverse }}
+{{ $latestPages := first 5 $allPages }}
+
+<section class="posts">
+    <h2>{{ .title }}</h2>
+
+    {{ range $latestPages.GroupByDate "2006" }}
+        <div class="posts-group home-posts-group">
+            <div class="post-year">{{ .Key }}</div>
+            {{ partial "post-list.html" (dict "pages" .Pages) }}
+        </div>
+    {{ end }}
+
+    {{ if $latestPages }}
+        <div class="home-more-container">
+            <a class="button outline" href="{{ .moreURL | relURL }}" aria-label="{{ .title }}をもっと見る">もっと見る</a>
+        </div>
+    {{ end }}
+</section>

@@ -4,6 +4,17 @@
   margin-right: auto;
 }
 
+.home-more-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  > .button {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 button,
 .button,
 a.button {

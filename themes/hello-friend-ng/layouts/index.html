@@ -20,23 +20,18 @@
             {{- end }}
         </section>
 
-        <section class="posts">
-            <h2>作品</h2>
+        {{ $workPages := where .Site.RegularPages "Type" "in" .Site.Params.subSections }}
+        {{ partial "home-posts-section.html" (dict
+            "title" "Works"
+            "pages" $workPages
+            "moreURL" "/works/"
+        ) }}
 
-            {{ $workPages := where .Site.RegularPages "Type" "in" .Site.Params.subSections }}
-            <div class="posts-group">
-                {{ partial "post-list.html" (dict "pages" $workPages) }}
-            </div>
-        </section>
-
-        <section class="posts">
-            <h2>最近の記事</h2>
-
-            {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-
-            <div class="posts-group">
-                {{ partial "post-list.html" (dict "pages" $pages) }}
-            </div>
-        </section>
+        {{ $postPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{ partial "home-posts-section.html" (dict
+            "title" "最近の記事"
+            "pages" $postPages
+            "moreURL" "/posts/"
+        ) }}
     </main>
 {{ end }}
